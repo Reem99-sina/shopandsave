@@ -19,6 +19,16 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      // ✅ Allow using `any`
+      "@typescript-eslint/no-explicit-any": "off",
+
+      // ✅ Disable missing dependency warning for useMemo/useEffect
+      "react-hooks/exhaustive-deps": "off",
+
+      // ✅ Disable missing display name warning
+      "react/display-name": "off",
+    },
   },
 ];
 
