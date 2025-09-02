@@ -70,7 +70,7 @@ export function MainCards() {
                 }`}
               >
                 <div className="flex flex-col gap-3 items-baseline">
-                <p className="text-sm  mb-2 font-medium">{t(stat.title)}</p>
+                <p className="text-sm  mb-2 ">{t(stat.title)}</p>
                 <p className={`text-2xl font-bold ${stat.color}`}>
                   {t(stat.value)} {stat.extra ? t(stat.extra) : ""}
                 </p>

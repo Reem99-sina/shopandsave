@@ -62,7 +62,7 @@ export default function StoreSales() {
   return (
     <section className="bg-white rounded-xl border border-gray-200 p-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-sm ">{t("sales_volume_per_store")}</h2>
+        <h2 className="text-sm font-semibold">{t("sales_volume_per_store")}</h2>
         <Button
           className=" px-4 py-2 rounded-lg text-sm hover:bg-gray-100 bg-gray-200 !text-black !w-auto"
           text={t("export_store_stats")}

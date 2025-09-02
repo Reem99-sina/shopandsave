@@ -123,9 +123,9 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
                     {group}
                   </div>
                 )}
-                {items.map((opt) => (
+                {items.map((opt,index) => (
                   <div
-                    key={opt.value}
+                    key={opt.value+index}
                     onClick={() => toggleOption(opt)}
                     className={`relative cursor-pointer select-none py-2 pl-10 pr-4 hover:bg-main-blue-light hover:text-text-hover ${
                       isSelected(opt) ? "bg-main-blue-light font-medium" : ""

@@ -6,7 +6,7 @@ export default {
   analytics: "Analytics",
   big_deals: "Big Deals",
   welcome_user: "Welcome, Mohammed Al-Ahmad",
-  
+
   // Summary Cards
   total_orders: "Total Orders",
   orders_today: "Orders Today",
@@ -16,7 +16,7 @@ export default {
   pending_orders: "Pending Orders",
   total_sales: "Total Sales",
   sales_today: "Sales Today",
-  
+
   // Order Tracking
   individual_order_tracking: "Individual Order Tracking",
   search_orders_customers: "Search in orders or customers",
@@ -26,11 +26,11 @@ export default {
   amount: "Amount",
   status: "Status",
   time: "Time",
-  
+
   // Order Status
   completed: "Completed",
   in_progress_status: "In Progress",
-  
+
   // Sales Volume
   sales_volume_per_store: "Sales Volume per Store",
   view_all: "View All",
@@ -40,43 +40,43 @@ export default {
   completion_rate: "Completion Rate",
   average_order_value: "Average Order Value",
   filter: "Filter",
-  
+
   // Store Names
   carrefour: "Carrefour",
   lulu_market: "Lulu Market",
   metro_market: "Metro Market",
-  
+
   // Customer Names
   ahmed_mohammed: "Ahmed Mohammed",
   fatima_ali: "Fatima Ali",
   mohammed_saeed: "Mohammed Al-Saeed",
   noura_khaled: "Noura Al-Khaled",
-  
+
   // Locations
   riyadh_narjis: "Riyadh, Al-Narjis district",
   jeddah_zahraa: "Jeddah, Al-Zahraa district",
   dammam_faisaliyah: "Dammam, Al-Faisaliyah district",
   riyadh_olya: "Riyadh, Al-Olya district",
-  
+
   // Currency
   sar: "SAR",
-  
+
   // Time
   am: "AM",
   pm: "PM",
-  
+
   // Items
   item_8: "Item 8",
   item_12: "Item 12",
   item_6: "Item 6",
   item_15: "Item 15",
-  
+
   // Order Numbers
   ord_001: "ORD-001",
   ord_002: "ORD-002",
   ord_003: "ORD-003",
   ord_004: "ORD-004",
-  
+
   // Numbers
   total_orders_count: "156",
   completed_orders_count: "134",
@@ -90,23 +90,23 @@ export default {
   lulu_sales: "15,200",
   lulu_completion: "88",
   lulu_avg_order: "292",
-  
+
   // Order Amounts
   order_amount_1: "280.50",
   order_amount_2: "450.00",
   order_amount_3: "195.75",
   order_amount_4: "680.25",
-  
+
   // Times
   time_1030: "10:30",
   time_1115: "11:15",
   time_1200: "12:00",
   time_0145: "01:45",
-  
+
   // Filter & Search
   results: "Results",
   no_results_found: "No results found",
-  
+
   // Login Page
   admin_login: "Admin Login",
   enter_data_access: "Enter your data to access the system",
@@ -116,7 +116,7 @@ export default {
   test_data: "Test data",
   test_credentials: "Password: 123456 | User: admin",
   logout: "Logout",
-  
+
   // New Dashboard Keys
   last_7_days: "Last 7 days",
   selected_period: "Selected period",
@@ -139,8 +139,63 @@ export default {
   thursday: "Thursday",
   wednesday: "Wednesday",
   tuesday: "Tuesday",
-  
-  deleteScene:"Delete",
-    all:"all"
 
+  deleteScene: "Delete",
+  all: "all",
+  daily_report_orders: "Daily Report - Order Volume",
+  search: "Search",
+  totalSales: "Total Sales",
+  totalOrders: "Total Orders",
+  metro: "Metro",
+  lulu: "lulu",
+  averageDailyOrders: "Average daily orders",
+  activeCustomers: "Active customers",
+  averageOrderValue: "Average order value",
+  growthRate: "Growth rate",
+  prevWeek: "From last week",
+  dashboard: {
+    title_pie_chart: "Orders distribution by store",
+    title_bar_chart: "Weekly Orders",
+    title_line_chart: "Orders by hours of the day",
+    title_product_categories: "Top Product Categories",
+    stores: {
+      carrefour: "Carrefour",
+      lulu: "Lulu Market",
+      metro: "Metro Market",
+    },
+    product_categories: {
+      fruits_vegetables: "Fruits & Vegetables",
+      dairy: "Dairy Products",
+      meat_poultry: "Meat & Poultry",
+      bakery: "Bakery",
+      others: "Others",
+    },
+    days: {
+      saturday: "Saturday",
+      sunday: "Sunday",
+      monday: "Monday",
+      tuesday: "Tuesday",
+      wednesday: "Wednesday",
+      thursday: "Thursday",
+      friday: "Friday",
+    },
+    charts: {
+      orders: "Orders",
+      online: "Online Orders",
+      offline: "Offline Orders",
+    },
+    cards: {
+      activeDeals: "Active Deals",
+      activeDealsSubtitle: "Out of 4 deals",
+      totalValue: "Total Value",
+      totalValueSubtitle: "Value of all deals",
+      totalOrders: "Total Orders",
+      totalOrdersSubtitle: "Big deals orders",
+      averageDiscount: "Average Discount",
+      averageDiscountSubtitle: "Average discount",
+      fromTotalDeals: "From Total Deals",
+      allDealsValue: "Value of All Deals",
+      largeOrders: "Large Orders",
+    },
+  },
 } as const;

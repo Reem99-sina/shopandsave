@@ -13,7 +13,7 @@ export const HeadRow = ({ columns }: Props) => {
         <th
           key={column.title}
           className={clsx(
-            " bg-[#F2F8FB] p-2 text-xs font-bold text-primary3",
+            " border-b border-gray-300 p-2 text-xs font-bold text-primary3",
             index === 0 && "border-r-0",
             index === columns.length - 1 && "border-l-0"
           )}

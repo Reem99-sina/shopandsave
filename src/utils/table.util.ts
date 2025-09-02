@@ -7,7 +7,6 @@ import { JSX } from "react";
  */
 export const getValueByAccessor = (
   // TODO: remove any from here!
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   obj: any,
   accessor: string,
 ): JSX.Element | string | number => {

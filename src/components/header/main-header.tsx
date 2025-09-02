@@ -2,18 +2,28 @@
 
 import Link from "next/link";
 import { useTranslation } from "@/translations/client";
-import { Home, FileText, BarChart3, ShoppingCart, User } from "lucide-react";
-import {  usePathname } from "next/navigation";
+import {
+  Home,
+  FileText,
+  BarChart3,
+  ShoppingCart,
+  User,
+  LogOut,
+  Languages,
+} from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import clsx from "clsx";
+import { useAuth } from "@/hooks/auth.hook";
 
 export function MainHeader() {
-  const { isRTL, t } = useTranslation();
+  const { isRTL, t, changeLanguage, lang } = useTranslation();
   const params = usePathname();
+  const { logout } = useAuth();
   const pathWithoutLang = useMemo(() => {
-    return params?.replace(/(ar|en)/, "");
+    return params?.replace(/(ar|en)/, "").replace(/\/{2,}/g, "/");
   }, [params]);
-  console.log(params?.replace(/(ar|en)/, ""), "params");
+
   const navLinks = [
     { label: t("home"), icon: Home, href: "/" },
     { label: t("daily_reports"), icon: FileText, href: "/reports" },
@@ -55,8 +65,8 @@ export function MainHeader() {
                     : "text-gray-600 hover:text-gray-800"
                 )}
               >
-                <Icon size={16} />
                 <span>{label}</span>
+                <Icon size={16} />
               </Link>
             ))}
           </div>
@@ -68,6 +78,18 @@ export function MainHeader() {
             isRTL ? "flex-row-reverse" : "flex-row"
           }`}
         >
+          <LogOut
+            className="text-black cursor-pointer"
+            onClick={() => {
+              logout();
+            }}
+          />
+          <Languages
+            className="text-black cursor-pointer"
+            onClick={() => {
+              changeLanguage(lang == "ar" ? "en" : "ar");
+            }}
+          />
           <span className="text-gray-600">{t("welcome_user")}</span>
           <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
             <User size={16} className="text-gray-600" />

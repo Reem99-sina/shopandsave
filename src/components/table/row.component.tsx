@@ -13,7 +13,7 @@ interface Props<T> {
 }
 
 export const Row = <T,>({ item, columns, index, href }: Props<T>) => {
-  const isOdd = index % 2 !== 0;
+
   const router = useRouter();
 
   return (
@@ -22,13 +22,14 @@ export const Row = <T,>({ item, columns, index, href }: Props<T>) => {
       onClick={function (): void {
         router.push(`${href}`);
       }}
+      className="hover:bg-[#F8F8F9] bg-white"
     >
       {columns.map((column) => (
         <td
           key={column.title}
           className={clsx(
-            "border-b  border-solid border-divider p-3 font-normal text-head",
-            isOdd ? "bg-[#F8F8F9]" : "bg-white"
+            "border-b  border-solid border-gray-300 p-3 font-normal text-head",
+            // isOdd ? "bg-[#F8F8F9]" : "bg-white"
           )}
         >
           <div className="w-full truncate text-center">

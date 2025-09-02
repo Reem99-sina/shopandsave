@@ -6,7 +6,7 @@ import { I18nProviderClient } from "@/translations/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SplinePointer } from "lucide-react";
 import { useParams, usePathname } from "next/navigation";
-import { useMemo } from "react";
+import {  useMemo } from "react";
 import { ToastContainer } from "react-toastify";
 import { MainHeader } from "../header/main-header";
 
@@ -26,10 +26,20 @@ const queryClient = new QueryClient({
 export const Providers = ({ children }: Props) => {
   const { locale } = useParams();
   const pathname = usePathname();
+
+
 const pathWithoutLang = useMemo(() => {
     return pathname?.replace(/(ar|en)/, "");
   }, [pathname]);
-  const hideHeader = pathWithoutLang === "/login";
+
+  const hideHeader = pathWithoutLang.includes("/login") ;
+// console.log(authData,"authData",hideHeader,pathWithoutLang)
+//    useEffect(() => {
+//     if ( !authData?.token && pathWithoutLang !== "/login") {
+//       router.replace("/login");
+//     }
+//   }, [authData,  pathWithoutLang]);
+
 
   return (
     <I18nProviderClient

@@ -1,16 +1,14 @@
 "use client";
 import { useTranslation } from "@/translations/client";
+import clsx from "clsx";
 import { Package, TrendingUp, ChartColumn, Users } from "lucide-react";
 import { JSX } from "react";
 type TranslationKeys =
-  | "total_orders"
-  | "average_order_value"
-  | "total_sales"
-  | "total_items"
-  | "last_7_days"
-  | "selected_period"
-  | "items_sold"
-  | "average_order";
+  | "averageDailyOrders"
+  | "activeCustomers"
+  | "averageOrderValue"
+  | "growthRate"|"prevWeek"
+
 
 interface CardData {
   title: TranslationKeys;
@@ -21,32 +19,33 @@ interface CardData {
 
 const cards: CardData[] = [
   {
-    title: "total_orders",
-    value: "1,164",
-    subtitle: "last_7_days",
+    title: "averageDailyOrders",
+    value: "54",
+    subtitle: "prevWeek",
     icon: <Package className="h-4 w-4 text-muted-foreground" />,
   },
   {
-    title: "total_sales",
-    value: "336,730 ر.س",
-    subtitle: "selected_period",
-    icon: <TrendingUp className="h-4 w-4 text-muted-foreground" />,
+    title: "activeCustomers",
+    value: "248",
+    subtitle: "prevWeek",
+      icon: <Users className="h-4 w-4 text-muted-foreground" />,
   },
   {
-    title: "total_items",
-    value: "9,310",
-    subtitle: "items_sold",
+    title: "averageOrderValue",
+    value: "285 ر.س",
+    subtitle: "prevWeek",
     icon: <ChartColumn className="h-4 w-4 text-muted-foreground" />,
   },
   {
-    title: "average_order_value",
-    value: "289 ر.س",
-    subtitle: "average_order",
-    icon: <Users className="h-4 w-4 text-muted-foreground" />,
+    title: "growthRate",
+    value: "+15%",
+    subtitle: "prevWeek",
+    icon: <TrendingUp className="h-4 w-4 text-muted-foreground" />,
+  
   },
 ];
 
-export default function DashboardReportsCards() {
+export default function DashboardAnalysisCards() {
   const { t } = useTranslation();
 
   return (
@@ -63,7 +62,7 @@ export default function DashboardReportsCards() {
                 {card.icon}
               </div>
               <div className="px-6 pb-6 text-end">
-                <div className="text-2xl font-bold">{card.value}</div>
+                <div className={clsx(card.value.includes("%")?"text-green-600":"","text-2xl font-bold")}>{card.value}</div>
                 <p className="text-xs text-muted-foreground">
                   {t(card.subtitle)}
                 </p>

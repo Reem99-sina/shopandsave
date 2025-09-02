@@ -68,7 +68,11 @@ const AuthProvider = ({ children }: Props) => {
     authenticate,
     logout: handleLogout,
   };
-
+  useEffect(() => {
+    if (!storedValue) {
+      router.replace("/login");
+    }
+  }, [storedValue, router]);
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
